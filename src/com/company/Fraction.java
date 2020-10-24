@@ -68,10 +68,14 @@ public class Fraction {
     private int getSecondPart(){
         return numerator%denominator;
     }
-
-
+//    получаем в виде десятичной дроби
+    private double getDecimalFraction(){
+        return (double) numerator/denominator;
+    }
+//    печать в различных формах
     public void printResult(){
         System.out.println("Результат в виде обыкновенной дроби:"+"\n"+getNumerator()+"\n"+"---"+"\n"+getDenominator());
         System.out.println("Результат в виде смешанной дроби:"+"\n"+"   "+getSecondPart()+"\n"+getFullPart()+"---"+"\n"+"   "+getDenominator());
+        System.out.println("Результат в виде десятичной дроби: "+getDecimalFraction());
     }
 }
