@@ -81,6 +81,26 @@ public class Fraction {
         resultSum.printResult();
 
     }
+    //разность дроби
+    public static void getDifference(Fraction firstFr, Fraction secondFr){
+        Fraction resultDif=new Fraction((firstFr.getNumerator()*secondFr.getDenominator())-(secondFr.getNumerator() * firstFr.getDenominator()),
+                firstFr.getDenominator()* secondFr.getDenominator());
+        resultDif.reduce();
+        resultDif.printResult();
+    }
+    //умножение дроби
+    public static void getMultiplication(Fraction firstFr,Fraction secondFr){
+        Fraction multiplicationResult=new Fraction(firstFr.getNumerator()* secondFr.getNumerator(),secondFr.getDenominator()*firstFr.getDenominator());
+        multiplicationResult.reduce();
+        multiplicationResult.printResult();
+    }
+    //деление дроби
+    public static void getDivision(Fraction firstFr,Fraction secondFr){
+        Fraction divisionResult=new Fraction(firstFr.getNumerator()* secondFr.getDenominator(),secondFr.getNumerator()*firstFr.getDenominator());
+        divisionResult.reduce();
+        divisionResult.printResult();
+
+    }
 //    печать в различных формах
     public void printResult(){
         System.out.println("Результат в виде обыкновенной дроби:"+"\n"+getNumerator()+"\n"+"---"+"\n"+getDenominator());
