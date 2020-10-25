@@ -57,8 +57,9 @@ public class Fraction {
 
     //сокращает дробь
     private void reduce() {
-        numerator /= gcd(Math.abs(numerator), Math.abs(denominator));
-        denominator /= gcd(Math.abs(numerator), Math.abs(denominator));
+        int gcdResult=gcd(Math.abs(numerator), Math.abs(denominator));
+        numerator /= gcdResult;
+        denominator /= gcdResult;
     }
     //возврат смешанной дроби.1.получение целой части
     private int getFullPart() {
@@ -71,6 +72,14 @@ public class Fraction {
 //    получаем в виде десятичной дроби
     private double getDecimalFraction(){
         return (double) numerator/denominator;
+    }
+    //сумма двух дробей
+    public static void getSum(Fraction firstFr, Fraction secondFr){
+        Fraction resultSum=new Fraction((firstFr.getNumerator()*secondFr.getDenominator())+(secondFr.getNumerator() * firstFr.getDenominator()),
+                                        firstFr.getDenominator()* secondFr.getDenominator());
+        resultSum.reduce();
+        resultSum.printResult();
+
     }
 //    печать в различных формах
     public void printResult(){
